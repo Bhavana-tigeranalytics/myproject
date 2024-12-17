@@ -1,0 +1,67 @@
+{
+    "username":"bhavana.muraboina@tigeranalytics.com",
+    "password":"Tiger#123",
+    
+  "url": "https://onedatapreprod.tigeranalyticstest.in/reports",
+  "Deliverytab": "(//*[local-name()='div' and @aria-label='Page navigation . Click here to follow link'])[1]",
+  "overviewsoW" : "(//*[local-name()='svg' and @class='card'][1])[3]",
+  "clicklinktofollow" : "(//*[local-name()='div' and @aria-label='Page navigation . Click here to follow link'])[2]",
+  "sowoverview2" : "(//div[@class='scrollable-cells-viewport '])[2]",
+  "sowoverview3" : "((//*[local-name()='svg' and @class='svgScrollable'])[1]//*[name()='text' and @class='label'])[8]",
+  "sowoverview4" : "(//*[local-name()='text' and @class='value'])[2]",
+  "sowInt":"((//*[local-name()='svg' and @class='svgScrollable'])[4]//*[name()='text' and @class='label'])[9]",
+  "sowoverview5" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap cell-interactive tablixAlignRight main-cell '])[1]",
+  "AccountListPage" : "// span[contains(text(), 'Account List')]",
+  "sowoverview6" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap cell-interactive tablixAlignRight main-cell '])[1]",
+  "deliveryhcandmixpage" : "// span[contains(text(), 'Delivery HC & Mix')]",
+  "sowoverview7" : "(//*[local-name()='svg' and @class='card'][1])[4]",
+  "sowoverview8" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap tablixAlignRight main-cell '])[1]",
+  "delierymixdp" : "// span[contains(text(), 'Delivery Mix DP')]",
+  "dropdown1" : "(//*[local-name()='i' and @class='dropdown-chevron powervisuals-glyph chevron-down'])[1]",
+  "selectcheckbox1" : "(//*[local-name()='span' and @class='glyphicon radiobutton checkboxOutlineContrast'])[2]",
+  "sowoverview9" : "(//*[local-name()='text' and @class='value'])[1]",
+  "sowoverview10" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap cell-interactive tablixAlignCenter main-cell '])[1]",
+  "sowoverview11" : "(//span[text()=' Total :']//following::visual-container[1]//visual-modern//div//*[@x='0'])[2]",
+  "peoplemix" : "// span[contains(text(), 'People Mix')]",
+  "dropdown2" : "(//*[local-name()='i' and @class='dropdown-chevron powervisuals-glyph chevron-down'])[2]",
+  "selectcheckbox2" : "(//*[local-name()='span' and @class='glyphicon radiobutton checkboxOutlineContrast'])[2]",
+  "sowoverview12" : "//*[@id='pvExplorationHost']/div/div/exploration/div/explore-canvas/div/div[2]/div/div[2]/div[2]/visual-container-repeat/visual-container[10]/transform/div/div[3]/div/div/visual-modern/div",
+  "sowoverview13" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap cell-interactive tablixAlignCenter main-cell '])[3]",
+  "PracticeOverview" : "(// span[contains(text(), 'Overview')])[4]",
+  "practicedropdown" : "(//*[local-name()='i' and @class='dropdown-chevron powervisuals-glyph chevron-down'])[1]",
+  "practicecheckbox" : "(//*[local-name()='div' and @class='slicerItemContainer'])[1]",
+  "sowoverview14" : "((//*[local-name()='svg' and @class='svgScrollable'])[1]//*[name()='text' and @class='label'])[9]",
+
+  "sowoverview15" : "(//*[local-name()='div' and @class='pivotTableCellNoWrap cell-interactive tablixAlignRight main-cell '])[1]",
+  "sowoverview16" : "(//*[local-name()='tspan' and @class='label-tspan'])[69]",
+  "practiceclicklinktofollow" : "(//*[local-name()='div' and @aria-label='Page navigation . Click here to follow link'])[1]",
+  "dropdownup" : "(//*[local-name()='i' and @class='dropdown-chevron powervisuals-glyph chevron-up'])[1]",
+  "db_host": "onedatadw-prod.database.windows.net",
+  "db_user": "onedatadw_read",
+  "db_password": "Onedata@123",
+  "db_name": "onedatadw",
+  "sqlQuery1": "SELECT SUM(FTE) AS Sum_of_FTE FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE AS OffshoreOnsite_Dossier JOIN TGT.VW_FACT_RESOURCE_REQUEST_DETAIL AS Fact_Resource_Request_Detail ON OffshoreOnsite_Dossier.Resource_Request_Detail_Key = Fact_Resource_Request_Detail.Resource_Request_Detail_Key WHERE OffshoreOnsite_Dossier.OFFSHORE_ONSITE_FLAG = 'Offshore' AND OffshoreOnsite_Dossier.[Allocation Subgroup] = 'Billable' AND OffshoreOnsite_Dossier.[Is Active?] <> 'N' AND OffshoreOnsite_Dossier.[Weekly/monthly/both] = 'Monthly' AND OffshoreOnsite_Dossier.[As of date] = (SELECT MAX([As of date]) FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE) AND Fact_Resource_Request_Detail.BILLABILITY_START_DATE >= '2010-01-01';",
+  "sqlQuery2": "SELECT SUM(FTE) AS Sum_of_FTE FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE AS OffshoreOnsite_Dossier WHERE OffshoreOnsite_Dossier.level_group <> 'INT' AND OffshoreOnsite_Dossier.[Allocation group2] = 'Investments' AND OffshoreOnsite_Dossier.[Is Active?] <> 'N' AND OffshoreOnsite_Dossier.[Weekly/monthly/both] = 'Monthly' AND OffshoreOnsite_Dossier.[As of date] = (SELECT MAX([As of date]) FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE);",
+  "sqlQuery3": "SELECT SUM(FTE) AS Sum_of_FTE FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE AS OffshoreOnsite_Dossier WHERE OffshoreOnsite_Dossier.level_group <> 'INT' AND OffshoreOnsite_Dossier.[Allocation group2] = 'Available' AND OffshoreOnsite_Dossier.[Is Active?] <> 'N' AND OffshoreOnsite_Dossier.[Weekly/monthly/both] = 'Monthly' AND OffshoreOnsite_Dossier.OFFSHORE_ONSITE_FLAG = 'offshore' AND OffshoreOnsite_Dossier.[As of date] = (SELECT MIN(MAX_DATE) FROM (SELECT MAX([As of date]) AS MAX_DATE FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE UNION ALL SELECT MAX([Ref_Dt]) AS MAX_DATE FROM TGT.VW_FACT_INSIGHTS) AS MaxDates);",
+  "sqlQuery4": "SELECT SUM(FTE) as Sum_of_FTE FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE WHERE [Weekly/monthly/both] = 'Monthly' AND ([Level_Group] <> 'INT' OR [Level_Group] IS NULL) AND [Is Active?] <> 'N' AND [OFFSHORE_ONSITE_FLAG] = 'offshore' AND [As of date] = (SELECT MAX([As of date]) FROM TGT.VW_ONEDATA_OFFSHORE_ONSITE);",
+  "sqlQuery5": "SELECT SUM(EBHC_DOSSIER) as sum_of_ebhc FROM TGT.VW_FACT_INSIGHTS WHERE Ref_Dt = (SELECT MAX(Ref_Dt) FROM TGT.VW_FACT_INSIGHTS);",
+  "industries" :"(// span[contains(text(), 'Industries')])",
+  "momsowtrend": "((//*[local-name()='svg' and @class='svgScrollable'])[1]//*[name()='text' ])[14]",
+  "industryinsights":"((//*[local-name()='svg' and @class='svgScrollable'])[2]//*[name()='text' and @class='label'])[2]",
+  "more":"(// span[contains(text(), '2 more')])[2]",
+  "industry":"// span[contains(text(), 'Industry Segment Insights')]"
+
+  
+  
+}
+
+
+
+
+
+
+
+
+
+
+          

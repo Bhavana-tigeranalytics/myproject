@@ -1,0 +1,3510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="PowerBIPageloadTest_Final" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments">
+          <elementProp name="Password" elementType="Argument">
+            <stringProp name="Argument.name">Password</stringProp>
+            <stringProp name="Argument.value">Koushi@1234</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OverviewPath" elementType="Argument">
+            <stringProp name="Argument.name">OverviewPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Overview&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Username" elementType="Argument">
+            <stringProp name="Argument.name">Username</stringProp>
+            <stringProp name="Argument.value">dadeeja.pasupath@tigeranalytics.com</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="IndustriesPath" elementType="Argument">
+            <stringProp name="Argument.name">IndustriesPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Industries&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="IndustriesPage" elementType="Argument">
+            <stringProp name="Argument.name">IndustriesPage</stringProp>
+            <stringProp name="Argument.value">//*[contains(text(),&quot;Delivery Partner&quot;)]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AttritionPath" elementType="Argument">
+            <stringProp name="Argument.name">AttritionPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Attrition - INDIA&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AttritionPage" elementType="Argument">
+            <stringProp name="Argument.name">AttritionPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;text&quot; and @class=&quot;value&quot;][1])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UsageMetricsPath" elementType="Argument">
+            <stringProp name="Argument.name">UsageMetricsPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;OneData_Usage metrics&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="UsageMetricsPage" elementType="Argument">
+            <stringProp name="Argument.name">UsageMetricsPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;text&quot; and @class=&quot;value&quot;][1])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsOverviewPath" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsOverviewPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Overview&quot;)])[3]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsOverviewPage" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsOverviewPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;div&quot; and @column-index=&quot;10&quot;])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsPortfolioPath" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsPortfolioPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Portfolio&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsPortfolioPage" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsPortfolioPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;div&quot; and @column-index=&quot;10&quot;])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsProjectionsPath" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsProjectionsPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Projections&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="FinancialsProjectionsPage" elementType="Argument">
+            <stringProp name="Argument.name">FinancialsProjectionsPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;path&quot; and @class=&quot;interactivity-line sub-selectable&quot;])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PartnershipAlliancesPath" elementType="Argument">
+            <stringProp name="Argument.name">PartnershipAlliancesPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Partnership &amp; Alliances&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PartnershipAlliancesPage" elementType="Argument">
+            <stringProp name="Argument.name">PartnershipAlliancesPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;text&quot; and @class=&quot;value&quot;])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AccountsOverviewPath" elementType="Argument">
+            <stringProp name="Argument.name">AccountsOverviewPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Overview&quot;)])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AccountsOverviewPage" elementType="Argument">
+            <stringProp name="Argument.name">AccountsOverviewPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;HC Efficiency&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AccountsListPath" elementType="Argument">
+            <stringProp name="Argument.name">AccountsListPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Account List&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AccountsListPage" elementType="Argument">
+            <stringProp name="Argument.name">AccountsListPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Investment&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PartnerListPath" elementType="Argument">
+            <stringProp name="Argument.name">PartnerListPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Partner List&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PartnerListPage" elementType="Argument">
+            <stringProp name="Argument.name">PartnerListPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Engineering Partner&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THCLiveMonitorPath" elementType="Argument">
+            <stringProp name="Argument.name">THCLiveMonitorPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;THC Live Monitor&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THCLiveMonitorPage" elementType="Argument">
+            <stringProp name="Argument.name">THCLiveMonitorPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Team Health Check&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="1morePath" elementType="Argument">
+            <stringProp name="Argument.name">1morePath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;1 more&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeOverviewPath" elementType="Argument">
+            <stringProp name="Argument.name">PracticeOverviewPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Overview&quot;)])[4]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeOverviewPage" elementType="Argument">
+            <stringProp name="Argument.name">PracticeOverviewPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Practice Overview&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeCapabilityPath" elementType="Argument">
+            <stringProp name="Argument.name">PracticeCapabilityPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Capability&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeCapabilityPage" elementType="Argument">
+            <stringProp name="Argument.name">PracticeCapabilityPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Headcount split by Levels&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeEmployeePath" elementType="Argument">
+            <stringProp name="Argument.name">PracticeEmployeePath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Employee&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticeEmployeePage" elementType="Argument">
+            <stringProp name="Argument.name">PracticeEmployeePage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Overall Utilization&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticePlanningPath" elementType="Argument">
+            <stringProp name="Argument.name">PracticePlanningPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Planning&quot;)])[1]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PracticePlanningPage" elementType="Argument">
+            <stringProp name="Argument.name">PracticePlanningPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;MOM HC Delta &amp; Available&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THCMonthlyInsightsPath" elementType="Argument">
+            <stringProp name="Argument.name">THCMonthlyInsightsPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;THC Monthly Insights&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="THCMonthlyInsightsPage" elementType="Argument">
+            <stringProp name="Argument.name">THCMonthlyInsightsPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Key Insights&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="StaffingDeliveryHC&amp;MixPath" elementType="Argument">
+            <stringProp name="Argument.name">StaffingDeliveryHC&amp;MixPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Delivery HC &amp; Mix&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="StaffingDeliveryHC&amp;MixPage" elementType="Argument">
+            <stringProp name="Argument.name">StaffingDeliveryHC&amp;MixPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Delivery HC &amp; Mix&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DeliveryMixDPPath" elementType="Argument">
+            <stringProp name="Argument.name">DeliveryMixDPPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Delivery Mix DP&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DeliveryMixDPPage" elementType="Argument">
+            <stringProp name="Argument.name">DeliveryMixDPPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;DP - Delivery Mix&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PeopleMixPath" elementType="Argument">
+            <stringProp name="Argument.name">PeopleMixPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;People Mix&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="PeopleMixPage" elementType="Argument">
+            <stringProp name="Argument.name">PeopleMixPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;People Mix&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="StaffingMetricsPath" elementType="Argument">
+            <stringProp name="Argument.name">StaffingMetricsPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Staffing Metrics&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="StaffingMetricsPage" elementType="Argument">
+            <stringProp name="Argument.name">StaffingMetricsPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Staffing Metrics&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DemandPath" elementType="Argument">
+            <stringProp name="Argument.name">DemandPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Demand&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="DemandPage" elementType="Argument">
+            <stringProp name="Argument.name">DemandPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;By Stream&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="4morePath" elementType="Argument">
+            <stringProp name="Argument.name">4morePath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;4 more&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RampDownPath" elementType="Argument">
+            <stringProp name="Argument.name">RampDownPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Ramp Down&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="RampDownPage" elementType="Argument">
+            <stringProp name="Argument.name">RampDownPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Ramp Down&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="HC&amp;FTEPath" elementType="Argument">
+            <stringProp name="Argument.name">HC&amp;FTEPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;HC &amp; FTE&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="HC&amp;FTEPage" elementType="Argument">
+            <stringProp name="Argument.name">HC&amp;FTEPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Monthly Headcount* - Delivery&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AvailabilityPath" elementType="Argument">
+            <stringProp name="Argument.name">AvailabilityPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Availability&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="AvailabilityPage" elementType="Argument">
+            <stringProp name="Argument.name">AvailabilityPage</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Availability&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="US+EmployeePath" elementType="Argument">
+            <stringProp name="Argument.name">US+EmployeePath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Employee&quot;)])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="US+EmployeePage" elementType="Argument">
+            <stringProp name="Argument.name">US+EmployeePage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;Monthly Trend - HC Delta, Joiners &amp; Attrition&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="US+AttritionPath" elementType="Argument">
+            <stringProp name="Argument.name">US+AttritionPath</stringProp>
+            <stringProp name="Argument.value">(//span[contains(text(),&quot;Attrition&quot;)])[2]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="US+AttritionPage" elementType="Argument">
+            <stringProp name="Argument.name">US+AttritionPage</stringProp>
+            <stringProp name="Argument.value">(//div[contains(text(),&quot;By Tenure&quot;)])</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="OverviewPage" elementType="Argument">
+            <stringProp name="Argument.name">OverviewPage</stringProp>
+            <stringProp name="Argument.value">(//*[local-name()=&quot;svg&quot; and @class=&quot;card&quot;][1])[3]</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+          <elementProp name="Authentication" elementType="Argument">
+            <stringProp name="Argument.name">Authentication</stringProp>
+            <stringProp name="Argument.value">eyJhbGciOiJSUzI1NiIsImtpZCI6IjZjZTExYWVjZjllYjE0MDI0YTQ0YmJmZDFiY2Y4YjMyYTEyMjg3ZmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiI1NzI3NDUxOTQ0NjYtdmxubmZmcDZwY2I5NG45aTdxNWkwdjRpN3RyaDU5b2UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI1NzI3NDUxOTQ0NjYtdmxubmZmcDZwY2I5NG45aTdxNWkwdjRpN3RyaDU5b2UuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMDUyMzk2NDI0NzEzNzE5Nzk0MTciLCJoZCI6InRpZ2VyYW5hbHl0aWNzLmNvbSIsImVtYWlsIjoiZGFkZWVqYS5wYXN1cGF0aEB0aWdlcmFuYWx5dGljcy5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IlFvQV9RZGc1UVE1QU5COVk3NDFJRGciLCJuYW1lIjoiRGFkZWVqYSBQYXN1cGF0aGkiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSWExS1lIOEJ3ZE5LM09odXp0YzZKMTljQnMwWlJRQ2FqWGdBZmdpMTNDRC1hOUtRPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IkRhZGVlamEiLCJmYW1pbHlfbmFtZSI6IlBhc3VwYXRoaSIsImlhdCI6MTcxMzM0MDM4MSwiZXhwIjoxNzEzMzQzOTgxfQ.wnicwq7XVzb0umZWysiGixHFxQDVB4lzcNue-ZGCRUkPzREP_zWAvUzupkMYQIoJKnOCLhg-f2YpMl-K3RPb1AEgeSuLPMv8OsOXu5jVgkdtEPa0V2t44t0UbX-5HW52deszXNjSentIRRdKSmz3W2JYTJLf_EkljOCtzuRAeU_5giEUkgO3P2n4OB-pfGYrkpqLGAtC8Bvl9hiul3RPzu5h1S1HAsxWTD3Eg6JCkKyDl3sdAdVReozIiNXB5Y56pJMkA6i0vK6PXwlHhRFmdzAYZzKJfVJjNLDNgqFQpaLZFyePhAX2c20IwakOVHch6yFm71wuH9jP-LxoXVLJ4Q</stringProp>
+            <stringProp name="Argument.metadata">=</stringProp>
+          </elementProp>
+        </collectionProp>
+      </Arguments>
+      <hashTree/>
+      <com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig guiclass="com.googlecode.jmeter.plugins.webdriver.config.gui.ChromeDriverConfigGui" testclass="com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig" testname="jp@gc - Chrome Driver Config" enabled="true">
+        <boolProp name="WebDriverConfig.acceptinsecurecerts">false</boolProp>
+        <boolProp name="WebDriverConfig.reset_per_iteration">false</boolProp>
+        <stringProp name="WebDriverConfig.driver_path">C:\Users\dadeeja.pasupath\Downloads\apache-jmeter-5.5\apache-jmeter-5.5\bin\chromedriver.exe</stringProp>
+        <boolProp name="WebDriverConfig.dev_mode">false</boolProp>
+        <boolProp name="WebDriverConfig.headless">false</boolProp>
+        <boolProp name="WebDriverConfig.maximize_browser">true</boolProp>
+        <stringProp name="ChromeDriverConfig.additional_args"></stringProp>
+        <stringProp name="ChromeDriverConfig.binary_path"></stringProp>
+        <stringProp name="WebDriverConfig.proxy_type">SYSTEM</stringProp>
+        <stringProp name="WebDriverConfig.proxy_pac_url"></stringProp>
+        <stringProp name="WebDriverConfig.http_host"></stringProp>
+        <intProp name="WebDriverConfig.http_port">8080</intProp>
+        <boolProp name="WebDriverConfig.use_http_for_all_protocols">true</boolProp>
+        <stringProp name="WebDriverConfig.https_host"></stringProp>
+        <intProp name="WebDriverConfig.https_port">8080</intProp>
+        <stringProp name="WebDriverConfig.ftp_host"></stringProp>
+        <intProp name="WebDriverConfig.ftp_port">8080</intProp>
+        <stringProp name="WebDriverConfig.socks_host"></stringProp>
+        <intProp name="WebDriverConfig.socks_port">8080</intProp>
+        <stringProp name="WebDriverConfig.no_proxy">localhost</stringProp>
+        <stringProp name="WebDriverConfig.custom_capabilites"></stringProp>
+      </com.googlecode.jmeter.plugins.webdriver.config.ChromeDriverConfig>
+      <hashTree/>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - Organization-Industries_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${IndustriesPath}&apos;)));
+def Industries = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${IndustriesPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Industries);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;(//*[local-name()=&quot;text&quot; and @class=&quot;label&quot;][1])&apos;)));
+def Industries1 = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;(//*[local-name()=&quot;text&quot; and @class=&quot;label&quot;][1])&apos;));
+
+WDS.sampleResult.sampleEnd();
+
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Organization-AttritionIndia_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AttritionPath}&apos;)));
+def Attrition = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${AttritionPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Attrition);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AttritionPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+2</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Organization-UsageMetricsPath_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${UsageMetricsPath}&apos;)));
+def UsageMetrics = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${UsageMetricsPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,UsageMetrics);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${UsageMetricsPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Financials-Overview_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsOverviewPath}&apos;)));
+def FinancialsOverview = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${FinancialsOverviewPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,FinancialsOverview);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsOverviewPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Financials-Portfolio_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsPortfolioPath}&apos;)));
+def FinancialsPortfolio = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${FinancialsPortfolioPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,FinancialsPortfolio);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsPortfolioPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Practice-Overview_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeOverviewPath}&apos;)));
+def PracticeOverview = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PracticeOverviewPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PracticeOverview);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeOverviewPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Financials-Projections_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsProjectionsPath}&apos;)));
+def FinancialsProjections = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${FinancialsProjectionsPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,FinancialsProjections);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${FinancialsProjectionsPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Financials-Partnership&amp;Alliances_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PartnershipAlliancesPath}&apos;)));
+def PartnershipAlliances = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PartnershipAlliancesPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PartnershipAlliances);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PartnershipAlliancesPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - Organization-Overview-ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${OverviewPath}&apos;)));
+def Overview = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${OverviewPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Overview);
+
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${OverviewPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Accounts-Overview_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AccountsOverviewPath}&apos;)));
+def AccountsOverview = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${AccountsOverviewPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,AccountsOverview);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AccountsOverviewPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Accounts-THCmonthly insights_ONEDATAPOWERBIAPP-pending" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+// time taken to load THC monthly insights page
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${1morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${1morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(2000);
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${THCMonthlyInsightsPath}&apos;)));
+def THCMonthlyInsights = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${THCMonthlyInsightsPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,THCMonthlyInsights);
+
+
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${THCMonthlyInsightsPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-StaffingMetrics_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load StaffingDeliveryHC&amp;Mix
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${StaffingMetricsPath}&apos;)));
+def StaffingMetrics = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${StaffingMetricsPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,StaffingMetrics);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${StaffingMetricsPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Accounts-AccountLIst_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AccountsListPath}&apos;)));
+def AccountsList = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${AccountsListPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,AccountsList);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AccountsListPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Accounts-Partnerlist_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(35000);
+//
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PartnerListPath}&apos;)));
+def PartnerList = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PartnerListPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PartnerList);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PartnerListPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+8</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Accounts-THCLiveMonitor_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${THCLiveMonitorPath}&apos;)));
+def THCLiveMonitorPath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${THCLiveMonitorPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,THCLiveMonitorPath);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${THCLiveMonitorPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+java.lang.Thread.sleep(5000);
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Practice-Capability_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeCapabilityPath}&apos;)));
+def PracticeCapability = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PracticeCapabilityPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PracticeCapability);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeCapabilityPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Practice-Employee_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeEmployeePath}&apos;)));
+def PracticeEmployee = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PracticeEmployeePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PracticeEmployee);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticeEmployeePage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Practice-Planning_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load homepage
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticePlanningPath}&apos;)));
+def PracticePlanning = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PracticePlanningPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PracticePlanning);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PracticePlanningPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-DeliveryHC&amp;Mix_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load StaffingDeliveryHC&amp;Mix
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${StaffingDeliveryHC&amp;MixPath}&apos;)));
+def StaffingDelivery = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${StaffingDeliveryHC&amp;MixPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,StaffingDelivery);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${StaffingDeliveryHC&amp;MixPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-PeopleMix_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load StaffingDeliveryHC&amp;Mix
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PeopleMixPath}&apos;)));
+def PeopleMix = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${PeopleMixPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,PeopleMix);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${PeopleMixPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-Demand_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(2000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${DemandPath}&apos;)));
+def Demand = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${DemandPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Demand);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${DemandPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-DeliveryMixDPPath_ONEDATAPOWERBIAPP" enabled="true">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load StaffingDeliveryHC&amp;Mix
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${DeliveryMixDPPath}&apos;)));
+def DeliveryMixDP = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${DeliveryMixDPPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,DeliveryMixDP);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${DeliveryMixDPPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-HC&amp; FTE_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(5000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${HC&amp;FTEPath}&apos;)));
+def HCFTE = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${HC&amp;FTEPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,HCFTE);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=100;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${HC&amp;FTEPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-Availability_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(5000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AvailabilityPath}&apos;)));
+def Availability = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${AvailabilityPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Availability);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=5;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${AvailabilityPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc US-Employee_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(5000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${US+EmployeePath}&apos;)));
+def EmployeePath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${US+EmployeePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,EmployeePath);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=5;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${US+EmployeePage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc US-Attrition_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(5000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${US+AttritionPath}&apos;)));
+def Attrition = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${US+AttritionPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Attrition);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=5;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${US+AttritionPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc -Staffing-RampDown_ONEDATAPOWERBIAPP" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+//def pkg = JavaImporter(org.openqa.selenium)
+//def support_ui = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+//def driver = JavaImporter(org.openqa.selenium.support.ui.WebDriverWait)
+import org.openqa.selenium.WebDriver;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Login Page
+WDS.browser.get(&apos;https://onedata.tigeranalyticstest.in/reports&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;Login_buttonText__lRdGI&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+var handle = WDS.browser.getWindowHandle()
+var handles = WDS.browser.getWindowHandles()
+
+for (var i=0; i &lt; handles.size(); i++)
+{
+    var currenthandle = handles.toArray()[i]
+    if (currenthandle != handle)
+    {
+        WDS.browser.switchTo().window(currenthandle);
+        WDS.log.info(WDS.browser.getTitle())
+        java.lang.System.out.println(WDS.browser.getTitle())
+    }
+}
+
+//Passing User Credentials
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@id=&quot;identifierId&quot;]&apos;)).sendKeys(&apos;${Username}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//input[@type=&quot;password&quot;]&apos;)).sendKeys(&apos;${Password}&apos;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+java.lang.Thread.sleep(25000);
+
+//WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Next&quot;)]&apos;)).click();
+//java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Continue&quot;)]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+
+// It will return the parent window name
+def handles1 = WDS.browser.getWindowHandles()
+def iterator = handles1.iterator()
+def counter = 1;
+while (iterator.hasNext())
+{
+def handle1 = iterator.next()
+WDS.browser.switchTo().window(handle1)
+ WDS.log.info(&apos;Window &apos; + counter + &apos; title = &apos; + WDS.browser.getTitle())
+counter++;
+}
+
+java.lang.Thread.sleep(5000);
+
+//Time taken to load Demand
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;)));
+def morepath = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${4morePath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,morepath);
+java.lang.Thread.sleep(5000);
+
+
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${RampDownPath}&apos;)));
+def RampDown = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;${RampDownPath}&apos;));
+WDS.browser.executeScript(&quot;arguments[0].click();&quot;,RampDown);
+new WebDriverWait(WDS.browser, Duration.ofSeconds(10)).until(conditions.frameToBeAvailableAndSwitchToIt(0));
+
+WDS.sampleResult.sampleStart();
+for (def attempt=1;attempt&lt;=5;attempt++)
+{
+try
+{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;${RampDownPage}&apos;)));
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+
+WDS.sampleResult.sampleEnd();
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - Home Page Load" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+//WebDriverWait wait = new WebDriverWait(driver,30);
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+
+//Load Home Page
+WDS.browser.get(&apos;https://app.powerbi.com/groups/me/reports/d0e812bb-85c0-4f8c-895f-019035e3c481/ReportSectione08e2c36f7a15ccb9e3f?experience=power-bi&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).click();
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).sendKeys(&quot;sona.jayaram@tigeranalytics.com&quot;);
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.id(&quot;submitBtn&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&quot;//*[@name=&apos;passwd&apos;]&quot;)).sendKeys(&quot;Tiger@1234&quot;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+//To start timing
+//WDS.sampleResult.subSampleStart(&apos;Home Page Load Time&apos;);
+WDS.sampleResult.sampleStart();
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{try
+{wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)));
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)).click();
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+//WDS.sampleResult.subSampleEnd(true);
+
+WDS.sampleResult.sampleEnd()
+
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="jp@gc - Home Page Load-Token" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+//WebDriverWait wait = new WebDriverWait(driver,30);
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+
+//Load Home Page
+WDS.browser.get(&apos;https://app.powerbi.com/groups/me/reports/d0e812bb-85c0-4f8c-895f-019035e3c481/ReportSectione08e2c36f7a15ccb9e3f?experience=power-bi&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).click();
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).sendKeys(&quot;sona.jayaram@tigeranalytics.com&quot;);
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.id(&quot;submitBtn&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&quot;//*[@name=&apos;passwd&apos;]&quot;)).sendKeys(&quot;Tiger@1234&quot;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+//To start timing
+//WDS.sampleResult.subSampleStart(&apos;Home Page Load Time&apos;);
+WDS.sampleResult.sampleStart();
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{try
+{wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)));
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)).click();
+break
+}
+catch(err){
+WDS.log.info(err)
+}
+}
+//WDS.sampleResult.subSampleEnd(true);
+
+WDS.sampleResult.sampleEnd()
+
+
+
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Clicking Reset" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Home Page
+WDS.browser.get(&apos;https://app.powerbi.com/groups/me/reports/d0e812bb-85c0-4f8c-895f-019035e3c481/ReportSectione08e2c36f7a15ccb9e3f?experience=power-bi&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).click();
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).sendKeys(&quot;sona.jayaram@tigeranalytics.com&quot;);
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.id(&quot;submitBtn&quot;)).click();
+java.lang.Thread.sleep(5000);
+
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&quot;//*[@name=&apos;passwd&apos;]&quot;)).sendKeys(&quot;Tiger@1234&quot;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+
+
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{
+	try
+	{
+	wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)));
+	WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)).click();
+	break
+	}
+	catch(err)
+	{
+	WDS.log.info(err)
+	}
+}
+java.lang.Thread.sleep(5000);
+
+//To start timing
+WDS.sampleResult.sampleStart();
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{
+	try
+	{
+	wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Reset&quot;)]&apos;)));
+	def Reset = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Reset&quot;)]&apos;));
+	//Reset.click();
+	WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Reset);
+	break
+	}
+	catch(err)
+	{
+	WDS.log.info(err)
+	}
+}
+WDS.sampleResult.sampleEnd()
+</stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler guiclass="com.googlecode.jmeter.plugins.webdriver.sampler.gui.WebDriverSamplerGui" testclass="com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler" testname="Filter-Year" enabled="false">
+          <stringProp name="WebDriverSampler.script">import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+def wait=new WebDriverWait(WDS.browser,Duration.ofSeconds(5000));
+def conditions = org.openqa.selenium.support.ui.ExpectedConditions;
+
+//Load Home Page
+WDS.browser.get(&apos;https://app.powerbi.com/groups/me/reports/d0e812bb-85c0-4f8c-895f-019035e3c481/ReportSectione08e2c36f7a15ccb9e3f?experience=power-bi&apos;)
+java.lang.Thread.sleep(5000);
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).click();
+WDS.browser.findElement(org.openqa.selenium.By.className(&quot;pbi-text-input&quot;)).sendKeys(&quot;sona.jayaram@tigeranalytics.com&quot;);
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.id(&quot;submitBtn&quot;)).click();
+java.lang.Thread.sleep(7000);
+
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&quot;//*[@name=&apos;passwd&apos;]&quot;)).sendKeys(&quot;Tiger@1234&quot;);
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+java.lang.Thread.sleep(5000);
+
+WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[@id=&quot;idSIButton9&quot;]&apos;)).click();
+
+
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{
+	try
+	{
+	wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)));
+	WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Executive Summary Coverage&quot;)]&apos;)).click();
+	break
+	}
+	catch(err)
+	{
+	WDS.log.info(err)
+	}
+}
+java.lang.Thread.sleep(5000);
+for (var attempt=1;attempt&lt;=100;attempt++)
+{
+	try
+	{
+	wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Reset&quot;)]&apos;)));
+	def Reset = WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[contains(text(),&quot;Reset&quot;)]&apos;));
+	//Reset.click();
+	WDS.browser.executeScript(&quot;arguments[0].click();&quot;,Reset);
+	break
+	}
+	catch(err)
+	{
+	WDS.log.info(err)
+	}
+}
+java.lang.Thread.sleep(5000);
+
+//To start timing
+WDS.sampleResult.sampleStart();
+
+for (var attempt=1;attempt&lt;=100;attempt++)
+{
+	try
+	{
+wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//*[local-name()=&quot;div&quot; and @class=&quot;slicer-restatement&quot;][1]&apos;)));
+	
+	WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[local-name()=&quot;div&quot; and @class=&quot;slicer-restatement&quot;][1]&apos;)).click();
+
+	wait.until(conditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath(&apos;//span[text()=&quot;2023&quot;]&apos;)));
+	WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//span[text()=&quot;2023&quot;]&apos;)).click();
+	WDS.browser.findElement(org.openqa.selenium.By.xpath(&apos;//*[local-name()=&quot;div&quot; and @class=&quot;slicer-restatement&quot;][1]&apos;)).click();
+break
+	}
+	catch(err)
+	{
+	WDS.log.info(err)
+	}
+}
+WDS.sampleResult.sampleEnd()   </stringProp>
+          <stringProp name="WebDriverSampler.parameters"></stringProp>
+          <stringProp name="WebDriverSampler.language">groovy</stringProp>
+        </com.googlecode.jmeter.plugins.webdriver.sampler.WebDriverSampler>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatVisualizer" testclass="ResultCollector" testname="Aggregate Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="StatGraphVisualizer" testclass="ResultCollector" testname="Aggregate Graph" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ThreadsStateOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Active Threads Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.ResponseTimesOverTimeGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Response Times Over Time" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">500</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+        <kg.apc.jmeter.vizualizers.CorrectedResultCollector guiclass="kg.apc.jmeter.vizualizers.TransactionsPerSecondGui" testclass="kg.apc.jmeter.vizualizers.CorrectedResultCollector" testname="jp@gc - Transactions per Second" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+          <longProp name="interval_grouping">1000</longProp>
+          <boolProp name="graph_aggregated">false</boolProp>
+          <stringProp name="include_sample_labels"></stringProp>
+          <stringProp name="exclude_sample_labels"></stringProp>
+          <stringProp name="start_offset"></stringProp>
+          <stringProp name="end_offset"></stringProp>
+          <boolProp name="include_checkbox_state">false</boolProp>
+          <boolProp name="exclude_checkbox_state">false</boolProp>
+        </kg.apc.jmeter.vizualizers.CorrectedResultCollector>
+        <hashTree/>
+      </hashTree>
+      <ProxyControl guiclass="ProxyControlGui" testclass="ProxyControl" testname="HTTP(S) Test Script Recorder" enabled="false">
+        <stringProp name="ProxyControlGui.port">8888</stringProp>
+        <collectionProp name="ProxyControlGui.exclude_list"/>
+        <collectionProp name="ProxyControlGui.include_list"/>
+        <boolProp name="ProxyControlGui.capture_http_headers">true</boolProp>
+        <intProp name="ProxyControlGui.grouping_mode">0</intProp>
+        <boolProp name="ProxyControlGui.add_assertion">false</boolProp>
+        <stringProp name="ProxyControlGui.sampler_type_name"></stringProp>
+        <boolProp name="ProxyControlGui.sampler_redirect_automatically">false</boolProp>
+        <boolProp name="ProxyControlGui.sampler_follow_redirects">true</boolProp>
+        <boolProp name="ProxyControlGui.use_keepalive">true</boolProp>
+        <boolProp name="ProxyControlGui.detect_graphql_request">true</boolProp>
+        <boolProp name="ProxyControlGui.sampler_download_images">false</boolProp>
+        <intProp name="ProxyControlGui.proxy_http_sampler_naming_mode">0</intProp>
+        <stringProp name="ProxyControlGui.default_encoding"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_prefix_http_sampler_name"></stringProp>
+        <stringProp name="ProxyControlGui.proxy_pause_http_sampler"></stringProp>
+        <boolProp name="ProxyControlGui.notify_child_sl_filtered">false</boolProp>
+        <boolProp name="ProxyControlGui.regex_match">false</boolProp>
+        <stringProp name="ProxyControlGui.content_type_include"></stringProp>
+        <stringProp name="ProxyControlGui.content_type_exclude"></stringProp>
+      </ProxyControl>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/generate_204-1" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">www.gstatic.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/generate_204</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-2" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          <stringProp name="TestPlan.comments">Detected the start of a redirect chain</stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">max-age=0</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/generate_204-3" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">www.gstatic.com</stringProp>
+          <stringProp name="HTTPSampler.port"></stringProp>
+          <stringProp name="HTTPSampler.protocol">http</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/generate_204</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Pragma" elementType="Header">
+                <stringProp name="Header.name">Pragma</stringProp>
+                <stringProp name="Header.value">no-cache</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="/-4" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments" guiclass="HTTPArgumentsPanel" testclass="Arguments" enabled="true">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">blazedemo.com</stringProp>
+          <stringProp name="HTTPSampler.port">443</stringProp>
+          <stringProp name="HTTPSampler.protocol">https</stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/</stringProp>
+          <stringProp name="HTTPSampler.method">GET</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="Sec-Fetch-Mode" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Mode</stringProp>
+                <stringProp name="Header.value">navigate</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Site" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Site</stringProp>
+                <stringProp name="Header.value">none</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Language" elementType="Header">
+                <stringProp name="Header.name">Accept-Language</stringProp>
+                <stringProp name="Header.value">en-US,en;q=0.9</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-User" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-User</stringProp>
+                <stringProp name="Header.value">?1</stringProp>
+              </elementProp>
+              <elementProp name="Accept" elementType="Header">
+                <stringProp name="Header.name">Accept</stringProp>
+                <stringProp name="Header.value">text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua</stringProp>
+                <stringProp name="Header.value">&quot;Google Chrome&quot;;v=&quot;123&quot;, &quot;Not:A-Brand&quot;;v=&quot;8&quot;, &quot;Chromium&quot;;v=&quot;123&quot;</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-mobile" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-mobile</stringProp>
+                <stringProp name="Header.value">?0</stringProp>
+              </elementProp>
+              <elementProp name="sec-ch-ua-platform" elementType="Header">
+                <stringProp name="Header.name">sec-ch-ua-platform</stringProp>
+                <stringProp name="Header.value">&quot;Windows&quot;</stringProp>
+              </elementProp>
+              <elementProp name="Upgrade-Insecure-Requests" elementType="Header">
+                <stringProp name="Header.name">Upgrade-Insecure-Requests</stringProp>
+                <stringProp name="Header.value">1</stringProp>
+              </elementProp>
+              <elementProp name="Cache-Control" elementType="Header">
+                <stringProp name="Header.name">Cache-Control</stringProp>
+                <stringProp name="Header.value">max-age=0</stringProp>
+              </elementProp>
+              <elementProp name="Accept-Encoding" elementType="Header">
+                <stringProp name="Header.name">Accept-Encoding</stringProp>
+                <stringProp name="Header.value">gzip, deflate, br, zstd</stringProp>
+              </elementProp>
+              <elementProp name="User-Agent" elementType="Header">
+                <stringProp name="Header.name">User-Agent</stringProp>
+                <stringProp name="Header.value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36</stringProp>
+              </elementProp>
+              <elementProp name="Sec-Fetch-Dest" elementType="Header">
+                <stringProp name="Header.name">Sec-Fetch-Dest</stringProp>
+                <stringProp name="Header.value">document</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
